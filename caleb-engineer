@@ -1,0 +1,50 @@
+server {
+    listen 80;
+    server_name caleb.engineer www.caleb.engineer;
+    return 301 https://caleb.engineer$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name www.caleb.engineer;
+
+    ssl_certificate /etc/ssl/fullchain.pem;
+    ssl_certificate_key /etc/ssl/privkey.pem;
+
+    return 301 https://caleb.engineer$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name caleb.engineer;
+
+    ssl_certificate /etc/ssl/fullchain.pem;
+    ssl_certificate_key /etc/ssl/privkey.pem;
+
+    ssl_protocols TLSv1.2 TLSv1.3 TLSv1.1 TLSv1;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    root /var/www/html;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
+server {
+    listen 80;
+    server_name calebheydon.com;
+    return 301 http://www.calebheydon.com$request_uri;
+}
+
+server {
+    listen 80;
+    server_name www.calebheydon.com;
+    root /var/www/html;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

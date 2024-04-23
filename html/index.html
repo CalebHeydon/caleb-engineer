@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Caleb Heydon</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #000000;
+                color: #00ff00;
+                font-family: "Courier New", monospace;
+                line-height: 1.6;
+                text-shadow: 0 0 5px #00ff00;
+            }
+            .menu {
+                display: flex;
+                justify-content: space-around;
+                list-style: none;
+                padding: 5px 0;
+            }
+            .menu li {
+                padding: 5px;
+            }
+            a {
+                color: #00ff00;
+                text-decoration: none;
+            }
+            a:hover {
+                background-color: #00ff00;
+                color: #000000;
+            }
+            a::before,
+            a::after {
+                content: "[";
+                color: #00ff00;
+            }
+            a::after {
+                content: "]";
+            }
+            main {
+                padding: 20px;
+            }
+            @keyframes blink {
+                0% {
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+            .cursor {
+                display: inline-block;
+                background-color: #00ff00;
+                width: 10px;
+                height: 20px;
+                animation: blink 1s step-start 0s infinite;
+                box-shadow: 0 0 5px #00ff00;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h1>Welcome to my website!</h1>
+                <p>
+                    I'm Caleb Heydon, an undergraduate student at the University
+                    of Connecticut majoring in Computer Science and Engineering
+                    (CSE) and Mechanical Engineering. Welcome to my website
+                    where you can find my projects, learn more about me, and get
+                    in touch.
+                </p>
+            </section>
+            <div class="cursor"></div>
+        </main>
+    </body>
+</html>
