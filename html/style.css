@@ -33,7 +33,7 @@ a::after {
     content: "]";
 }
 main {
-    padding: 20px;
+    padding: 10px 50px;
 }
 @keyframes blink {
     0% {
